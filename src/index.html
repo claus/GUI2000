@@ -1,0 +1,86 @@
+
+<!--
+//
+// _CFrame example
+// (c) 1999 Claus Wahlers
+// email: claus@wahlers.de
+// phone: +49-89-12164101
+// fax:   +49-89-12164102
+//
+-->
+
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Notepad">
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1">
+<TITLE>gui2000 approach 2 [CWorkspace example]</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript1.2" src="js/cframe.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" src="js/cframedlg.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" src="js/cframewnd.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" src="js/cclientframe.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" src="js/cframecaption.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" src="js/cframestatusbar.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" src="js/cframeimage.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" src="js/cframebutton.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" src="js/cframetext.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" src="js/cframetextcaption.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" src="js/cworkspace.js"></SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript1.2">
+<!--
+function init()
+{
+	var ws;
+	var frm;
+	
+	ws = new _CWorkspace();
+	ws.addObject(1, 0, new _CFrameText(10, 10, 200, 18, "gui ml approach 2 - march 28 1999"));
+	
+	frm = new _CFrameDlg(10, 40, 250, 130);
+	frm.addObject(0, 0, new _CFrameCaption(0, 0, 0, 18, "Dialog Frame", null, false, false, true));
+	ws.addObject(1, 0, frm);
+	
+	frm = new _CFrameWnd(80, 100, 250, 123);
+	frm.addObject(0, 0, new _CFrameCaption(0, 0, 0, 18, "Window Frame", "images/icon_16x16/ns4.gif", true, true, true));
+	frm.addObject(0, 1, new _CFrameStatusbar(0, 0, 0, 20));
+	ws.addObject(1, 0, frm);
+	
+	frm = new _CFrame(300, 300, 100, 20);
+	ws.addObject(1, 0, frm);
+
+	frm = new _CFrameWnd(100, 300, 100, 100);
+	ws.addObject(1, 0, frm);
+	
+	ws.buildLayers("visible");
+
+	ws.debug();
+}
+//-->
+</SCRIPT>
+</HEAD>
+
+<!--
+	a tag representation of this example could be something like this:
+
+	<WORKSPACE>
+	
+		<DIALOG left=8 top=50 width=250 height=123>
+			<CAPTION height=18 icon="gfx/somecaptionicon.gif" close>Dialog Frame</CAPTION>
+		</DIALOG>
+	
+		<WINDOW left=50 top=90 width=250 height=123>
+			<CAPTION height=18 icon="gfx/somecaptionicon.gif" minimize maximize close>Window Frame</CAPTION>
+			<STATUSBAR height=20></STATUSBAR>
+		</WINDOW>
+		
+	</WORKSPACE>
+	
+	the implementation of the properties and some basic objects like text,
+	icons, buttons and menus is still under construction, as well as the 
+	event handler stuff.
+-->
+
+<BODY onLoad="init()">
+</BODY>
+
